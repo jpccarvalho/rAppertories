@@ -1,12 +1,32 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-    container: {
+    screen: {
       flex: 1,
       backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'space-between',
+      alignItems:'center',
+      paddingVertical:100,
+      paddingHorizontal:20,
     },
+    pageTitle:{
+      fontSize:30,
+      fontWeight:'bold',
+      fontStyle:'italic',
+    },
+    row:{
+      flexDirection:'row',
+    },
+    button: {
+      height:140,
+      width:140,
+      margin:15,
+      alignItems:'center',
+      justifyContent:'center',
+      borderRadius: 10,
+      backgroundColor: "lightgreen",
+    },
+
   });
 
 export default styles;

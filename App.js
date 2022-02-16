@@ -3,7 +3,7 @@ import Home from './src/screens/home';
 
 export default function App() {
   return (
-    //<Login />
+   // <Login />
     <Home />
     
   );
