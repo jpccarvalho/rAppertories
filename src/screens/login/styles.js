@@ -1,3 +1,4 @@
+import reactDom from 'react-dom';
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -9,11 +10,10 @@ const styles = StyleSheet.create({
       padding:0,
     },
     appname:{
-      fontSize:60,
+      fontSize:48,
       fontWeight:'bold',
       fontStyle:'italic',
       height:200,
-      width:245
     },
     grid:{
       flexDirection:'row',
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
       margin:0,
     },
     container:{
-      width:"55%",
+      width:230
     },
     placeholder:{
       width:"95%",
@@ -32,11 +32,11 @@ const styles = StyleSheet.create({
       borderWidth:3,
       borderColor:"#0f0f0f",
       borderStyle:'solid',
-      borderRadius:10
+      borderRadius:10,
 
     },
     button: {
-      width:"20%",
+      width:"30%",
       height:86,
       alignItems:'center',
       justifyContent:'center',

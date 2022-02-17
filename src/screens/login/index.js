@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState, useContext, useRef } from 'react';
 import { Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 import { AuthContext } from '../../contexts/auth';
 import styles from './styles'
 
@@ -43,6 +44,7 @@ export default function Login() {
           <TextInput
             placeholder='Senha'
             secureTextEntry={true}
+            returnKeyType='send'
             style={styles.placeholder}
             value={password}
             onChangeText={(pw) => setPassword(pw)}
@@ -51,7 +53,7 @@ export default function Login() {
         </View>
         
         <TouchableOpacity style={styles.button} onPress={loginHandler}>
-          <Text>LOGIN</Text>
+          <AntDesign name="login" size={40} color="black" />
         </TouchableOpacity>
       </View>
     </View>

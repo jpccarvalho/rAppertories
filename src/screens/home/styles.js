@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
       paddingHorizontal:20,
     },
     pageTitle:{
-      fontSize:30,
+      fontSize:25,
       fontWeight:'bold',
       fontStyle:'italic',
     },
@@ -22,11 +22,47 @@ const styles = StyleSheet.create({
       width:140,
       margin:15,
       alignItems:'center',
-      justifyContent:'center',
+      justifyContent:'space-evenly',
       borderRadius: 10,
       backgroundColor: "lightgreen",
     },
+    modal: {
+      alignItems: 'center',
+      backgroundColor: "#FFF",
+      borderRadius: 10,
+      paddingVertical: 30,
+    },
+    modalTxt: {
+      color: "#000",
+      fontSize: 20,
+      fontWeight: 'bold',
+      marginBottom: 5,
+    },
+    modalRow:{
+      flexDirection:"row",
+      alignItems:"center",
+      justifyContent:"space-between",
+    },
+    modalInput:{
+      height:35,
+      width:"40%",
+      margin:3,
+      borderWidth:3,
+      borderColor:"#0f0f0f",
+      borderStyle:'solid',
+      borderRadius:10,
+    },
+    modalBtn:{
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      backgroundColor: "lightgreen",
+      height:35,
+      borderRadius: 10,
+      paddingVertical: 5,
+      paddingHorizontal: 10
 
+    },
   });
 
 export default styles;
