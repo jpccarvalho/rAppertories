@@ -4,5 +4,5 @@ Repositório designado ao aplicativo mobile rAppertory, que disbonibiliza a busc
 
 Para rodar o projeto, digitar no console/terminal:
 cd /rAppertory
-E em seguida:
+e em seguida:
 expo start
