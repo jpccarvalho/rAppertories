@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState, useContext, useRef } from 'react';
-import { Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { AuthContext } from '../../contexts/auth';
 import styles from './styles'
@@ -18,14 +18,10 @@ export default function Login() {
       signIn(username, password);
     }
     else{
-      //Adicionar modal
-      console.log("Digite suas credenciais!")
+      Alert.alert("Digite suas credenciais corretamente!")
     }
   }
-
-
   return (
-    /*Adicionar icone no botão login*/
     <View style={styles.screen}>
       <StatusBar style="auto" />
       <Text style={styles.appname}>rAppertory</Text>

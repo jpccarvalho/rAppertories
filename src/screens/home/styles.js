@@ -26,6 +26,10 @@ const styles = StyleSheet.create({
       borderRadius: 10,
       backgroundColor: "lightgreen",
     },
+    gridText:{
+      fontSize:16,
+      fontWeight:'bold'
+    },
     modal: {
       alignItems: 'center',
       backgroundColor: "#FFF",
