@@ -8,11 +8,10 @@ import styles from './styles';
 
 export default function Home() {
 
-
+  const [exitModalVisible, setExitModalVisible] = useState(false);
   const [searchModalVisible, setSearchModalVisible] = useState(false);
   const { user } = useContext(AuthContext);
   const navigation = useNavigation();
-
 
   function searchHandler(){
     setSearchModalVisible(!searchModalVisible)
@@ -43,6 +42,31 @@ export default function Home() {
           </View>
         </View>
       </Modal>
+      <Modal isVisible={exitModalVisible} onRequestClose={() => setExitModalVisible(!exitModalVisible)}>
+        <View style={styles.modal}>
+          <Text style={styles.modalTxt}>Deseja sair do aplicativo?</Text>
+          <View style={styles.modalRow}>
+            <TouchableOpacity title="Sair"
+              onPress={() => {
+                setExitModalVisible(!exitModalVisible);
+                navigation.popToTop();
+              }}>
+              <View style={styles.modalBtn}>
+                <Text style={{ color: 'white', marginLeft: 3 }}>Sair</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity title="Cancelar"
+              onPress={() => {
+                setExitModalVisible(!exitModalVisible);
+              }}>
+              <View style={styles.modalBtn}>
+                <Text style={{ color: 'white', marginLeft: 3 }}>Cancelar</Text>
+              </View>
+            </TouchableOpacity>
+          
+          </View>
+        </View>
+      </Modal>
       <Text style={styles.pageTitle}>Bem vindo ao rAppertory, {user.username}!</Text>
       <View>
         <View style={styles.row}>
@@ -63,7 +87,7 @@ export default function Home() {
             <AntDesign name="setting" size={50} color="#000" />
             <Text style={styles.gridText}>Configurações</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => navigation.popToTop()}>
+          <TouchableOpacity style={styles.button} onPress={() => setExitModalVisible(!exitModalVisible)}>
             <Ionicons name="exit-outline" size={60} color="black" />
             <Text style={styles.gridText}>Sair</Text>
           </TouchableOpacity>
