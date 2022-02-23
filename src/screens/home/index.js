@@ -1,4 +1,4 @@
-import { Text, View, TouchableOpacity, Pressable } from 'react-native';
+import { Text, View, TouchableOpacity, TextInput } from 'react-native';
 import { useContext, useState } from 'react';
 import Modal from 'react-native-modal';
 import { AuthContext } from '../../contexts/auth';
@@ -10,25 +10,13 @@ export default function Home() {
 
 
   const [searchModalVisible, setSearchModalVisible] = useState(false);
-  //const [cifra, setCifra] = useState('');
   const { user } = useContext(AuthContext);
   const navigation = useNavigation();
 
 
   function searchHandler(){
     setSearchModalVisible(!searchModalVisible)
-    //setCifra(cifra);
-    //navigation.navigate("Search");
   }
-
-  //Text input para buscar cifras dentro do moda
-  /**<TextInput 
-              placeholder='Buscar Cifra'
-              returnKeyType='send'
-              value={cifra}
-              onChangeText={(text) => setCifra(text)}
-            /> */
-
 
   return (
     <View style={styles.screen}>
@@ -36,8 +24,11 @@ export default function Home() {
         <View style={styles.modal}>
           <Text style={styles.modalTxt}>Buscar uma música:</Text>
           <View style={styles.modalRow}>
-            <View style={styles.modalInput}>
-            </View>
+            <TextInput 
+                style={styles.modalInput}
+                placeholder='Música'
+                returnKeyType='send'
+              /> 
             <View>
               <TouchableOpacity title="Salvar"
                 onPress={() => {

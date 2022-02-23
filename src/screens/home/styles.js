@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     },
     modalInput:{
       height:35,
-      width:"40%",
+      width:"50%",
       margin:3,
       borderWidth:3,
       borderColor:"#0f0f0f",
