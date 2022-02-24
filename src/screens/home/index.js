@@ -12,9 +12,10 @@ export default function Home() {
   const [searchModalVisible, setSearchModalVisible] = useState(false);
   const { user } = useContext(AuthContext);
   const navigation = useNavigation();
-
-  function searchHandler(){
+  const [song, setSong] = useState('');
+  function searchHandler() {
     setSearchModalVisible(!searchModalVisible)
+    navigation.navigate("Search", {song:song});
   }
 
   return (
@@ -23,19 +24,21 @@ export default function Home() {
         <View style={styles.modal}>
           <Text style={styles.modalTxt}>Buscar uma música:</Text>
           <View style={styles.modalRow}>
-            <TextInput 
-                style={styles.modalInput}
-                placeholder='Música'
-                returnKeyType='send'
-              /> 
+            <TextInput
+              style={styles.modalInput}
+              placeholder='Música'
+              returnKeyType='send'
+              value={song}
+              onChangeText={(s) => setSong(s)}
+            />
             <View>
               <TouchableOpacity title="Salvar"
                 onPress={() => {
                   searchHandler();
-              }}>
+                }}>
                 <View style={styles.modalBtn}>
                   <FontAwesome name="search" size={10} color="#fff" />
-                  <Text style={{color:'white', marginLeft:3}}>Buscar</Text>
+                  <Text style={{ color: 'white', marginLeft: 3 }}>Buscar</Text>
                 </View>
               </TouchableOpacity>
             </View>
@@ -63,7 +66,7 @@ export default function Home() {
                 <Text style={{ color: 'white', marginLeft: 3 }}>Cancelar</Text>
               </View>
             </TouchableOpacity>
-          
+
           </View>
         </View>
       </Modal>
@@ -71,8 +74,8 @@ export default function Home() {
       <View>
         <View style={styles.row}>
           <TouchableOpacity
-          style={styles.button}
-          onPress={() => setSearchModalVisible(true)}
+            style={styles.button}
+            onPress={() => setSearchModalVisible(true)}
           >
             <FontAwesome name="search" size={40} color="#000" />
             <Text style={styles.gridText}>Buscar cifras</Text>

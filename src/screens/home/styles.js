@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
       borderColor:"#0f0f0f",
       borderStyle:'solid',
       borderRadius:10,
+      padding:5,
     },
     modalBtn:{
       flexDirection: 'row',
